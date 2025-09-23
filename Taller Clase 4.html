@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Personal - Juan Camilo Rozo Mora</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header { background-color: #2c3e50; color: white; padding: 20px; text-align: center; }
+        nav a { margin: 0 15px; color: white; text-decoration: none; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        main { padding: 20px; }
+        section { margin-bottom: 40px; }
+        img { max-width: 200px; border-radius: 100px; display: block; margin: 10px auto; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        table, th, td { border: 1px solid #ccc; }
+        th, td { padding: 10px; text-align: center; }
+        form { display: flex; flex-direction: column; max-width: 400px; margin: auto; }
+        label { margin-top: 10px; font-weight: bold; }
+        input, textarea, button { padding: 10px; margin-top: 5px; font-size: 1em; }
+        button { background-color: #2c3e50; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #34495e; }
+        footer { background-color: #2c3e50; color: white; text-align: center; padding: 15px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Juan Camilo Rozo Mora</h1>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección Sobre mí -->
+        <section id="sobre-mi">
+            <h2>Sobre mí</h2>
+            <img src="2017546195450thumbnail.jpg" alt="Foto de Juan Camilo Rozo Mora">
+            <p>
+                Hola, soy <strong>Juan Camilo Rozo Mora</strong>, músico especializado en trombón con más de 
+                10 años de experiencia en interpretación y enseñanza musical. Además, cuento con más de 
+                6 años de experiencia en gestión administrativa en instituciones educativas públicas, 
+                donde apoyo procesos de atención al usuario, manejo de archivos, plataformas digitales y 
+                comunicación efectiva. Me apasiona la educación, la música, la innovación y el uso de 
+                herramientas digitales para optimizar procesos.
+            </p>
+        </section>
+
+        <!-- Sección Habilidades -->
+        <section id="habilidades">
+            <h2>Habilidades</h2>
+            <table>
+                <tr>
+                    <th>Habilidad</th>
+                    <th>Nivel</th>
+                    <th>Experiencia</th>
+                </tr>
+                <tr>
+                    <td>HTML & CSS</td>
+                    <td>Intermedio</td>
+                    <td>1 año</td>
+                </tr>
+                <tr>
+                    <td>Música (Trombón)</td>
+                    <td>Avanzado</td>
+                    <td>10+ años</td>
+                </tr>
+                <tr>
+                    <td>Gestión Administrativa</td>
+                    <td>Avanzado</td>
+                    <td>6 años</td>
+                </tr>
+                <tr>
+                    <td>Atención al Cliente</td>
+                    <td>Avanzado</td>
+                    <td>6 años</td>
+                </tr>
+                <tr>
+                    <td>Excel & Análisis de Datos</td>
+                    <td>Intermedio</td>
+                    <td>3 años</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contacto">
+            <h2>Contáctame</h2>
+            <form>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" minlength="10" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Juan Camilo Rozo Mora – Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>
