@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página web de UBA café, Café de origen libre de productos quimicos producido en Pacho (Cundinamarca) complementado con productos artesanales.">
+    <meta name="author" content="Tu Nombre">
+
+    <title>UBA Café</title>
+</head>
+<body>
+
+    <header>
+        <h1>UBA Café</h1>
+        
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section id="inicio">
+            <h2>Bienvenidos a Nuestra Cafetería</h2>
+            <p>
+                En <strong>UBA Café</strong>, cada taza cuenta una historia. Usamos granos de café locales 
+                y ofrecemos productos horneados artesanalmente todos los días. ¡Te esperamos!
+            </p>
+            <img src="Adobe Express - file.png" alt="Una taza de café junto a unos deliciosos waffles." width="400">
+        </section>
+
+        <hr>
+
+        <section id="menu">
+            <h2>Nuestro Menú Detallado</h2>
+
+            <table>
+                <caption>Menú de Productos UBA Café</caption>
+                
+                <thead>
+                    <tr>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Precio</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th scope="rowgroup" colspan="3">Bebidas Calientes</th>
+                    </tr>
+                    <tr>
+                        <td>Tinto campesino</td>
+                        <td>El tradicional sabor de nuestra tierra.</td>
+                        <td>$4.000</td>
+                    </tr>
+                    <tr>
+                        <td>Café claro</td>
+                        <td>Una preparación más suave y ligera (Americano).</td>
+                        <td>$4.500</td>
+                    </tr>
+                    <tr>
+                        <td>Café con leche</td>
+                        <td>El equilibrio perfecto entre café y leche cremosa (Latte).</td>
+                        <td>$6.000</td>
+                    </tr>
+                    <tr>
+                        <td>Pintado</td>
+                        <td>la versión local del capuchino.</td>
+                        <td>$6.500</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="rowgroup" colspan="3">Comidas</th>
+                    </tr>
+                    <tr>
+                        <td>Croissant de Almendras</td>
+                        <td>Hojaldre artesanal con relleno de almendras.</td>
+                        <td>$7.000</td>
+                    </tr>
+                    <tr>
+                        <td>Sandwich de Pavo y Queso</td>
+                        <td>Pan artesanal, pavo, queso y vegetales frescos.</td>
+                        <td>$12.000</td>
+                    </tr>
+                    <tr>
+                        <td>Tostadas de Aguacate</td>
+                        <td>Pan de masa madre con aguacate y semillas.</td>
+                        <td>$10.000</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="rowgroup" colspan="3">Postres</th>
+                    </tr>
+                    <tr>
+                        <td>Torta de Chocolate</td>
+                        <td>Porción de torta húmeda de chocolate.</td>
+                        <td>$8.000</td>
+                    </tr>
+                     <tr>
+                        <td>Cheesecake de Frutos Rojos</td>
+                        <td>Cremoso cheesecake con salsa casera de frutos rojos.</td>
+                        <td>$9.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <hr>
+
+        <section id="contacto">
+            <h2>Contáctanos</h2>
+            <form action="/enviar-formulario" method="post">
+                
+                <fieldset>
+                    <legend>Información Personal</legend>
+
+                    <label for="nombre">Nombre Completo:</label><br>
+                    <input type="text" id="nombre" name="nombre_usuario" placeholder="Ej: Ana Pérez" required minlength="3"><br><br>
+
+                    <label for="email">Correo Electrónico:</label><br>
+                    <input type="email" id="email" name="correo_usuario" placeholder="Ej: ana.perez@correo.com" required><br><br>
+
+                    <label for="telefono">Teléfono:</label><br>
+                    <input type="tel" id="telefono" name="telefono_usuario" placeholder="Ej: 3001234567" pattern="[0-9]{10}"><br><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Detalles de tu Consulta</legend>
+
+                    <label for="tipo-consulta">Tipo de Consulta:</label><br>
+                    <select id="tipo-consulta" name="tipo_consulta" required>
+                        <option value="">-- Por favor, elige una opción --</option>
+                        <option value="sugerencia">Sugerencia</option>
+                        <option value="reserva">Reserva de Mesa</option>
+                        <option value="evento">Cotización de Evento</option>
+                        <option value="queja">Queja o Reclamo</option>
+                    </select><br><br>
+
+                    <label for="mensaje">Mensaje:</label><br>
+                    <textarea id="mensaje" name="mensaje_usuario" rows="5" cols="40" placeholder="Escribe tu mensaje aquí..." required maxlength="300"></textarea><br><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Términos y Condiciones</legend>
+                    <input type="checkbox" id="privacidad" name="acepta_privacidad" required>
+                    <label for="privacidad">Acepto la política de privacidad y el tratamiento de mis datos.</label><br><br>
+                </fieldset>
+
+                <button type="submit">Enviar Mensaje</button>
+                <button type="reset">Limpiar Formulario</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            © 2025 UBA Café. Todos los derechos reservados.
+        </p>
+        <p>
+            Ubicación: Carrera 5 # 10-20, Zipaquirá, Colombia.
+        </p>
+        <p>
+            Contacto: <a href="mailto:contacto@ubacafe.com">contacto@ubacafe.com</a>
+        </p>
+    </footer>
+
+</body>
+</html>
