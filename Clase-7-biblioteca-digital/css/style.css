@@ -1,0 +1,110 @@
+/* --- BUENAS PRÁCTICAS Y ESTILOS BASE --- */
+* {
+    /* La mejor práctica de la clase anterior para el modelo de caja */
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Color de fondo ligero */
+}
+
+/* --- REQUISITO: CSS GRID PARA EL LAYOUT PRINCIPAL --- */
+.grid-container {
+    display: grid;
+    /* Definimos una columna fija de 250px para filtros y el resto (1fr) para el contenido */
+    grid-template-columns: 250px 1fr;
+    /* Definimos 3 filas: header (auto), contenido (1fr - flexible) y footer (auto) */
+    grid-template-rows: auto 1fr auto;
+    /* "Dibujamos" el layout de la página [cite: 434-437] */
+    grid-template-areas:
+        "header  header"
+        "filtros catalogo"
+        "footer  footer";
+    min-height: 100vh; /* Hacemos que el grid ocupe toda la altura de la pantalla */
+    gap: 20px; /* Espacio entre las áreas del grid [cite: 419] */
+}
+
+/* Asignamos cada elemento HTML a su área del grid */
+.header  { 
+    grid-area: header; 
+    background-color: #004a99; /* Azul de biblioteca */
+    color: white;
+    padding: 10px 20px;
+}
+.filtros { 
+    grid-area: filtros; 
+    background-color: #ffffff;
+    padding: 15px;
+    border-right: 1px solid #ddd;
+}
+.catalogo { 
+    grid-area: catalogo; 
+    padding: 15px;
+}
+.footer  { 
+    grid-area: footer; 
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+
+/* --- REQUISITO: FLEXBOX PARA COMPONENTES INTERNOS --- */
+
+/* 1. Catálogo de Libros */
+.catalogo {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los libros bajen a la siguiente línea si no caben [cite: 504] */
+    justify-content: center; /* Centra los libros horizontalmente */
+    gap: 20px;
+}
+
+.libro {
+    width: 200px; /* Ancho fijo para cada libro */
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+.libro img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 2. Lista de Filtros (Sidebar) */
+.filtros ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Apila las categorías verticalmente */
+    gap: 10px;
+}
+
+
+/* --- REQUISITO: MEDIA QUERY PARA DISEÑO RESPONSIVO (MÓVIL) --- */
+@media (max-width: 768px) {
+    .grid-container {
+        /* Cambiamos a una sola columna */
+        grid-template-columns: 1fr;
+        /* Reordenamos las áreas para que se apilen verticalmente */
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "content"
+            "footer";
+    }
+
+    /* Opcional: Centramos los filtros en móvil */
+    .filtros ul {
+        flex-direction: row; /* Ponemos los filtros en fila en móvil */
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
