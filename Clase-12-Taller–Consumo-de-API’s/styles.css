@@ -1,0 +1,108 @@
+/* --- Estilos Base y Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Buena práctica de la clase 5 */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    min-height: 100vh; /* Ocupa toda la altura */
+    
+    /* --- REQUISITO: CSS GRID para el Layout --- */
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Fila para header, 1fr (flexible) para main, auto para footer */
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+
+/* --- Estructura Semántica (Grid Areas) --- */
+.header {
+    grid-area: header;
+    background-color: #004a99;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.main-content {
+    grid-area: main;
+    padding: 20px;
+    /* Centramos el contenedor de las tarjetas */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+/* --- REQUISITO: FLEXBOX para las Tarjetas (dentro de Grid) --- */
+.user-grid {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas bajen a la siguiente línea */
+    justify-content: center;
+    gap: 20px; /* Espacio entre tarjetas */
+}
+
+.user-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 320px; /* Ancho de cada tarjeta */
+    
+    /* Flexbox para alinear el contenido INTERNO de la tarjeta */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animación sutil de la clase 8 */
+.user-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.user-card h3 {
+    color: #004a99;
+}
+
+.user-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.user-card .email-link {
+    color: #007bff;
+    text-decoration: none;
+    word-break: break-all; /* Evita que emails largos rompan el diseño */
+}
+
+/* --- REQUISITO: Media Query para Móviles --- */
+@media (max-width: 768px) {
+    .main-content {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .user-card {
+        /* Hacemos que la tarjeta ocupe todo el ancho en móviles */
+        width: 100%; 
+    }
+    
+    .header h1 {
+        font-size: 1.5rem;
+    }
+}
