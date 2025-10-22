@@ -1,0 +1,68 @@
+/* Estilos base */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    color: #e44d26; /* Un color temático */
+}
+
+/* Estilos del formulario de búsqueda */
+.busqueda {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#pokemonInput {
+    flex-grow: 1; /* Hace que el input ocupe el espacio disponible */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#buscarBtn {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#buscarBtn:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para la información del Pokémon (que JS creará) */
+#pokemonInfo {
+    margin-top: 20px;
+    text-align: left;
+}
+
+/* Clase que JS añadirá para los errores */
+.error {
+    color: #D8000C;
+    background-color: #FFD2D2;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
